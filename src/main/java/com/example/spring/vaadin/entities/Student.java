@@ -5,27 +5,31 @@ import com.example.spring.vaadin.properties.Sex;
 import com.example.spring.vaadin.properties.VisionAbility;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
-public class Student {
+public class Student implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
+    @Column(name = "first_name", nullable = false)
     private String firstName;
+
+    @Column(name = "last_name", nullable = false)
     private String lastName;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "height")
+    @Column(name = "height", nullable = false)
     private Height heightProperty;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "sex")
+    @Column(name = "sex", nullable = false)
     private Sex sex;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "vision")
+    @Column(name = "vision", nullable = false)
     private VisionAbility visionAbility;
 
     public String getFirstName() {

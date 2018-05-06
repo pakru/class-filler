@@ -5,8 +5,6 @@ import com.example.spring.vaadin.properties.Height;
 import com.example.spring.vaadin.properties.Sex;
 import com.example.spring.vaadin.properties.VisionAbility;
 import com.example.spring.vaadin.repo.StudentRepository;
-import com.vaadin.data.Binder;
-import com.vaadin.data.provider.DataProvider;
 import com.vaadin.data.provider.ListDataProvider;
 import com.vaadin.spring.annotation.SpringComponent;
 import com.vaadin.ui.Alignment;
@@ -57,7 +55,7 @@ public class StudentsListLayout extends VerticalLayout {
            addStudent.setVisionAbility(VisionAbility.OK);
            repo.save(addStudent);
            studentDataProvider.getItems().add(addStudent);
-           studentList = repo.findAll();
+//           studentList = repo.findAll();
            studentDataProvider.refreshAll();
            logger.debug("List of students: " + studentList);
         });
