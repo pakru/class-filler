@@ -3,6 +3,7 @@ package com.example.spring.vaadin.ui.layout;
 import com.example.spring.vaadin.entities.ClassRoom;
 import com.example.spring.vaadin.repo.StudentRepository;
 import com.example.spring.vaadin.ui.DeskUI;
+import com.vaadin.icons.VaadinIcons;
 import com.vaadin.spring.annotation.SpringComponent;
 import com.vaadin.spring.annotation.UIScope;
 import com.vaadin.ui.Alignment;
@@ -50,6 +51,7 @@ public class ClassroomLayout extends VerticalLayout {
         setWidth("100%");
 
         addComponent(accomodateBtn);
+        accomodateBtn.setIcon(VaadinIcons.RETWEET);
         accomodateBtn.addClickListener(e -> {
             classRoom.clearClass();
             classRoom.accomodateAsOrdered(repo.findAll());
