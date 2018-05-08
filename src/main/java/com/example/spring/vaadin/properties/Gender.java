@@ -1,6 +1,6 @@
 package com.example.spring.vaadin.properties;
 
-public enum Sex {
+public enum Gender {
     MALE,
     FEMALE
 }

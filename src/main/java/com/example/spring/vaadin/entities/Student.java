@@ -1,7 +1,7 @@
 package com.example.spring.vaadin.entities;
 
+import com.example.spring.vaadin.properties.Gender;
 import com.example.spring.vaadin.properties.Height;
-import com.example.spring.vaadin.properties.Sex;
 import com.example.spring.vaadin.properties.VisionAbility;
 
 import javax.persistence.*;
@@ -25,8 +25,8 @@ public class Student implements Serializable {
     private Height heightProperty;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "sex", nullable = false)
-    private Sex sex;
+    @Column(name = "gender", nullable = false)
+    private Gender gender;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "vision", nullable = false)
@@ -56,12 +56,12 @@ public class Student implements Serializable {
         this.heightProperty = heightProperty;
     }
 
-    public Sex getSex() {
-        return sex;
+    public Gender getGender() {
+        return gender;
     }
 
-    public void setSex(Sex sex) {
-        this.sex = sex;
+    public void setGender(Gender gender) {
+        this.gender = gender;
     }
 
     public VisionAbility getVisionAbility() {
@@ -79,7 +79,7 @@ public class Student implements Serializable {
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", heightProperty=" + heightProperty +
-                ", sex=" + sex +
+                ", gender=" + gender +
                 ", visionAbility=" + visionAbility +
                 '}';
     }
